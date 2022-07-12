@@ -1,0 +1,108 @@
+.card-product {
+  @include aifs-jfcsb;
+  flex-wrap: wrap;
+  margin-bottom: 90px;
+
+  @include sm {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  @include xs {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    background-color: $wc;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    width: calc(33.33% - 25px);
+    padding: 15px;
+
+    @include md {
+      width: calc(33.33% - 10px);
+    }
+
+    @include sm {
+      width: 100%;
+      max-width: 320px;
+      margin: auto;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 9px;
+
+    @include md {
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    @include sm {
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 600;
+    color: $mc;
+    text-align: center;
+    margin-bottom: 19px;
+
+    @include md {
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    @include sm {
+      font-size: 24px;
+    }
+  }
+
+  &__btn {
+    @include aic-jcc;
+    min-height: 50px;
+    border: 1px solid $mc;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba($bc, 0.5);
+    margin-bottom: 20px;
+    padding: 0 24px;
+
+    @include md {
+      padding: 0 10px;
+      font-size: 16px;
+    }
+
+    @include sm {
+      padding: 0 10px;
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 34px;
+      margin-right: 30px;
+
+      @include md {
+        max-width: 20px;
+        margin-right: 10px;
+      }
+
+      @include sm {
+        max-width: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .detail   
+        .container
+          .detail__wrap   
+            .detail__col   
+              .detail__img
+                img(src="assets/img/market.webp", alt="")  
+            .detail__col
+              .detail__name <div class="detail__name">Eco Life</div>   
+              .detail__info-contacts 
+                ul.contacts-list
+                  li
+                    i.icon-user
+                    span 100 people checked in here
+                  li
+                    i.icon-phone
+                    a(href="tel:+996555775025") 0555 775 025
+                  li
+                    i.icon-envelope
+                    a(href="mailto:ecomadekg@gmail.com") ecomadekg@gmail.com
+                  li
+                    i.icon-clock
+                    span 10 AM - 7 PM
+                  li
+                    i.icon-chrome
+                    a(href="#") http://www.ecomade.kg/
+                  li
+                    i.icon-marker
+                    span Ахунбаева 145, Бишкек, Кыргызстан
+              #map
+              a(href="#").btn Кнопка
+          p.text  Aliquet in mauris ullamcorper eget mattis massa integer amet. Vel commodo laoreet dui lectus eu auctor. Aliquam eu purus pharetra aenean sit accumsan ultricies sollicitudin risus. Cras cum egestas enim duis amet erat. Sagittis sem sagittis a est. Velit vitae orci suspendisse vivamus nulla ultricies lorem semper urna.
+            | Nulla eros, vitae vehicula est sed et id. Adipiscing libero nisi cras commodo, tortor rhoncus. Luctus porta fames integer consectetur est lectus vivamus. Augue commodo, faucibus quam adipiscing pretium. Non arcu ultrices at scelerisque non aliquam. Fermentum cursus urna ipsum gravida. Sed mollis pellentesque nunc arcu. Bibendum ornare id ultricies in iaculis habitant. Vel lectus purus vitae nulla. Erat pellentesque in in sollicitudin.
+            | Ipsum ullamcorper est duis odio. Ac in ut ut adipiscing quam dui, commodo cras molestie. Viverra posuere tellus sem massa. Est morbi magna sed massa egestas. Feugiat quam id egestas at nunc erat pellentesque fermentum. Justo ut sit mattis quam consequat proin hendrerit tellus molestie. Non eget massa libero, ut ut. Eleifend tortor sed aliquet mauris morbi vel turpis ut. In senectus viverra laoreet nullam vulputate duis suspendisse.
+          .detail__reviews
+            mixin review(avatar,name,location,review)
+              .detail__review
+                .detail__review-top
+                  .detail__review-top-wrap
+                    .detail__review-avatar
+                      img(src="assets/img/"+avatar, alt="")  
+                    .detail__review-info
+                      .detail__review-name=name
+                      .detail__review-location=location
+                  include includes/rating  
+                .detail__review-bottom
+                  .detail__review-review=review 
+            +review('avatar1.webp','Karizma A','Westside, Las Vegas, NV', 'Aliquet in mauris ullamcorper eget mattis massa integer amet. Vel commodo laoreet dui lectus eu auctor. Aliquam eu purus pharetra aenean sit accumsan ultricies sollicitudin risus. Cras cum egestas enim duis amet erat.')
+            +review('avatar2.webp','Leslie Alexander','Westside, Las Vegas, NV', 'Aliquet in mauris ullamcorper eget mattis massa integer amet. Vel commodo laoreet dui lectus eu auctor. Aliquam eu purus pharetra aenean sit accumsan ultricies sollicitudin risus. Cras cum egestas enim duis amet erat.')
+            +review('avatar3.webp','Ronald Richards','Westside, Las Vegas, NV', 'Aliquet in mauris ullamcorper eget mattis massa integer amet. Vel commodo laoreet dui lectus eu auctor. Aliquam eu purus pharetra aenean sit accumsan ultricies sollicitudin risus. Cras cum egestas enim duis amet erat.')
+            button.btn.btn--wide.btn--tac.review-js Написать отзыв
+
+    include includes/footer/footer
+
+
+  include includes/scripts
+  script(type='text/javascript').
+    var map;
+    DG.then(function () {
+    map = DG.map('map', {
+    center: [42.843679, 74.591286],
+    zoom: 17,
+    minZoom: 15,
+    fullscreenControl: false,
+    });
+    DG.marker([42.843679, 74.591286]).addTo(map).bindPopup('Вы кликнули поАхунбаева 145, Бишкек, Кыргызстан');
+    });
+ 

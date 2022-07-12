@@ -1,0 +1,106 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .hero.hero--inside-page
+        .swiper.hero-js
+          .swiper-wrapper
+            mixin hero(bg,title)
+              .swiper-slide
+                .hero__slide(style=`background-image: url('assets/img/${bg}')`)
+                  .container
+                    h2.hero__title=title
+            +hero('hero5.webp','Эко продукты')        
+            +hero('hero5.webp','Эко продукты2')        
+            +hero('hero5.webp','Эко продукты3')        
+          .swiper-pagination  
+      .container
+        p.text.text--tac Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium senectus faucibus porttitor nec facilisis pretium ut nam at. Pellentesque facilisi malesuada velit fames ligula consectetur. Nunc viverra pulvinar luctus tempor, id eu varius. 
+        br
+        br
+
+        .card-product
+          mixin cardProduct(img, title, price)
+            .card-product__item 
+              .card-product__img
+                img(src="assets/img/"+img) 
+              .card-product__title {{title}}
+              .card-product__price=price
+                | сом
+              a(href="#").card-product__btn
+                img(src="assets/img/ecoferma.svg")
+                | Ecoferma Market 
+              a(href="#").btn Подробнее
+          +cardProduct('eco-product1.webp')
+          +cardProduct('eco-product2.webp')
+          +cardProduct('eco-product3.webp')
+
+        .accordion 
+          mixin accordion(title, content)
+            .accordion__item
+              .angle
+              .accordion__theme
+                .accordion__img 
+                  img(src="assets/img/ecoferma.svg", alt="")
+                div
+                  .accordion__title=title 
+                  .accordion__subtitle Экологически чистая продукция местных фермеров... 
+              .accordion__content=content
+
+          .accordion__item
+            .angle
+            .accordion__theme
+              .accordion__img 
+                img(src="assets/img/ecoferma.svg", alt="")
+              div
+                .accordion__title Eco Life 
+                .accordion__subtitle Экологически чистая продукция местных фермеров... 
+            .accordion__content
+              .accordion__content-wrap
+                .accordion__content-col
+                  ul.contacts-list
+                    li
+                      i.icon-user
+                      span 100 people checked in here
+                    li
+                      i.icon-phone
+                      span 0555 775 025
+                    li
+                      i.icon-envelope
+                      a(href='mailto:ecomadekg@gmail.com') ecomadekg@gmail.com
+                    li
+                      i.icon-clock
+                      span 10 AM - 7 PM
+                    li
+                      i.icon-chrome
+                      a(href='http://www.ecomade.kg/') http://www.ecomade.kg/
+                    li
+                      i.icon-marker
+                      span Ахунбаева 145, Бишкек, Кыргызстан
+                .accordion__content-col
+                  #map
+          +accordion('Ecoferma Market','1')
+          +accordion('Green Market','2')
+          +accordion('Green Valley','3')
+          +accordion('Ынтымык Market','4')
+
+
+    include includes/footer/footer
+
+
+  include includes/scripts
+  script(type='text/javascript').
+    var map;
+    DG.then(function () {
+    map = DG.map('map', {
+    center: [42.843679, 74.591286],
+    zoom: 17,
+    minZoom: 15,
+    fullscreenControl: false,
+    });
+    DG.marker([42.843679, 74.591286]).addTo(map).bindPopup('Вы кликнули поАхунбаева 145, Бишкек, Кыргызстан');
+    });
+ 

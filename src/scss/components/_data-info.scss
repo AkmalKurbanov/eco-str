@@ -1,0 +1,151 @@
+.data-info {
+  background-color: rgba(#ffc806, 0.1);
+  padding: 40px 0;
+  margin-bottom: 45px;
+
+  @include xs {
+    margin-bottom: 30px;
+    padding: 25px 0;
+  }
+
+  &__wrap {
+    @include aifs-jfcsb;
+
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    width: calc(33.33% - 65px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include lg {
+      width: calc(33.33% - 15px);
+    }
+
+    @include md {
+      width: calc(33.33% - 10px);
+    }
+
+    @include sm {
+      width: calc(33.33% - 7px);
+    }
+
+    @include xs {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      .data-info__title {
+        span {
+
+          &:before,
+          &:after {
+            top: 50%;
+            transform: translate(-50%);
+          }
+
+          &:before {
+            content: "$";
+          }
+
+          &:after {
+            content: "k";
+          }
+        }
+      }
+    }
+  }
+
+  &__item-top {
+    @include aic;
+    margin-bottom: 15px;
+
+    @include lg {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__item-icon {
+    width: 60px;
+    height: 60px;
+    background-color: $mc;
+    color: $wc;
+    border-radius: 100%;
+    overflow: hidden;
+    @include aic-jcc;
+    margin-right: 20px;
+    font-size: 30px;
+
+    @include lg {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      margin-right: 15px;
+    }
+
+    @include md {
+      width: 45px;
+      height: 45px;
+      font-size: 22px;
+      margin-right: 10px;
+    }
+
+    @include sm {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      margin-right: 7px;
+    }
+  }
+
+  &__title {
+    font-size: 45px;
+    font-weight: 700;
+    color: $mc;
+
+    @include lg {
+      font-size: 35px;
+    }
+
+    @include md {
+      font-size: 25px;
+    }
+
+    @include sm {
+      font-size: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    color: $mc;
+
+    @include lg {
+      font-size: 15px;
+    }
+
+    @include md {
+      font-size: 14px;
+    }
+
+    @include sm {
+      font-size: 13px;
+    }
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+
+    @include lg {
+      font-size: 13px;
+    }
+  }
+}

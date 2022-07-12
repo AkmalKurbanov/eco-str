@@ -1,0 +1,131 @@
+.cards {
+  margin-bottom: 70px;
+
+  @include lg {
+    margin-bottom: 50px;
+  }
+
+  @include md {
+    margin-bottom: 30px;
+  }
+
+  &__wrap {
+    @include aifs-jfcsb;
+
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  &__card {
+    width: calc(33.33% - 10px);
+    background-color: $wc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+
+    @include sm {
+      width: calc(33.33% - 5px);
+    }
+
+    @include xs {
+      width: 100%;
+      max-width: 320px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__card-img {
+    @include aic;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  &__card-status {
+    background-color: $tc;
+    position: absolute;
+    font-size: 21px;
+    font-weight: 500;
+    min-height: 40px;
+    max-width: 175px;
+    width: 100%;
+    @include aic-jcc;
+    border-radius: 42px;
+    overflow: hidden;
+    top: 20px;
+    right: 10px;
+
+    @include lg {
+      font-size: 20px;
+      min-height: 35px;
+      max-width: 170px;
+      top: 19px;
+      right: 9px;
+    }
+
+    @include md {
+      font-size: 19px;
+      min-height: 30px;
+      max-width: 165px;
+      top: 18px;
+      right: 8px;
+    }
+
+    @include sm {
+      font-size: 13px;
+      max-width: 100px;
+      top: 10px;
+      right: 7px;
+    }
+
+    @include xs {
+      font-size: 21px;
+      max-width: 155px;
+      width: 100%;
+      min-height: 40px;
+      top: 20px;
+      right: 10px;
+    }
+  }
+
+  &__card-title {
+    background-color: $mc;
+    color: $wc;
+    font-size: 22px;
+    font-weight: 600;
+    @include aic-jcc;
+    width: 100%;
+    min-height: 50px;
+    padding: 15px 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: $tr;
+    text-align: center;
+
+    @include lg {
+      font-size: 20px;
+    }
+
+    @include md {
+      font-size: 18px;
+    }
+
+    @include sm {
+      font-size: 13px;
+    }
+
+    @include xs {
+      font-size: 22px;
+    }
+
+    &:hover {
+      background-color: $sc;
+      box-shadow: 0 5px 16px 0 rgba($sc, 60%);
+      transform: translateY(-3px);
+    }
+  }
+}

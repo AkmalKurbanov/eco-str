@@ -1,0 +1,93 @@
+.menu {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.69);
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: $tr;
+
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__wrap {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: $wc;
+  }
+
+  &__logo {
+    max-width: 54px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+
+      a {
+        color: $bc;
+        font-weight: 500;
+        transition: $tr;
+
+        &:hover {
+          color: $mc;
+        }
+      }
+
+      .angle {
+        margin-left: 5px;
+        position: absolute;
+        top: -2px;
+        transition: $tr;
+        transform-origin: center;
+        width: 12px;
+        height: 10px;
+        display: block;
+        right: -15px;
+
+        i {
+          font-size: 7px;
+        }
+      }
+
+      ul {
+        display: none;
+        margin-top: 10px;
+
+        li {
+          display: block;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            color: rgba($bc, 0.7);
+          }
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+}

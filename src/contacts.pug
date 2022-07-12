@@ -1,0 +1,77 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .hero.hero--inside-page(style="background-image: url('assets/img/hero4.webp')")
+        .container
+          h2.hero__title Контакты
+      .container
+        p.text.text--tac Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium senectus faucibus porttitor nec facilisis pretium ut nam at. Pellentesque facilisi malesuada velit fames ligula consectetur. Nunc viverra pulvinar luctus tempor, id eu varius.     
+        br
+        br
+
+      .contacts   
+        .container
+          .contacts__wrap
+            .contacts__col
+              h2.title.title--tal Наши контакты
+              .contacts__item
+                i.icon-user
+                span Имя Фамилия
+              .contacts__item
+                i.icon-phone
+                a(href="tel:+996123456789") +996 123 456 789
+              .contacts__item
+                i.icon-envelope
+                a(href="mailto:eco.product@info.com") eco.product@info.com
+
+            .contacts__col
+              .form
+                form
+                  .form__input
+                    input(placeholder="Имя" name="Имя")
+                  .form__wrap
+                    .form__input
+                      input(placeholder="Email" name="Email")
+                    .form__input
+                      input(placeholder="Номер телефона" name="Номер телефона")
+                  .form__input
+                    textarea(name="Сообщение" placeholder="Сообщение")
+                  .button.btn(type="submit") Отправить
+    include includes/footer/footer
+
+
+
+  include includes/scripts 
+  script.
+    $(document).ready(function () {
+    var counted = 0;
+    $(window).scroll(function () {
+    var oTop = $('#counter').offset().top - window.innerHeight;
+    if (counted == 0 && $(window).scrollTop() > oTop) {
+    $('.count').each(function () {
+    var $this = $(this),
+    countTo = $this.attr('data-count');
+    $({
+    countNum: $this.text()
+    }).animate({
+    countNum: countTo
+    },
+    {
+    duration: 500,
+    easing: 'swing',
+    step: function () {
+    $this.text(Math.floor(this.countNum));
+    },
+    complete: function () {
+    $this.text(this.countNum);
+    }
+    });
+    });
+    counted = 1;
+    }
+    });
+    });

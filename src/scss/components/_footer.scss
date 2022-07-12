@@ -1,0 +1,194 @@
+.footer {
+  padding: 70px 0 30px;
+  background-color: $mc;
+  flex: 0 0 auto;
+
+  @include xs {
+    padding: 25px 0;
+  }
+
+  &__wrap {
+    padding: 0 20px;
+    @include aifs-jfcsb;
+
+    @include sm {
+      flex-wrap: wrap;
+    }
+
+    @include xs {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+  }
+
+  * {
+    color: $wc;
+    line-height: 19px;
+  }
+
+  &__col {
+    @include sm {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+
+    @include xs {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    &:first-child {
+      @include xs {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      ul {
+        &:first-child {
+          @include xs {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: $tc;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+
+    .angle {
+      position: absolute;
+      top: 0;
+      margin-left: 5px;
+      display: none;
+      width: 16px;
+      height: 16px;
+      transform-origin: center;
+      transition: $tr;
+
+      @include xs {
+        display: inline-block;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 2px;
+        background: $tc;
+        top: 50%;
+      }
+
+      &:before {
+        transform: translateY(-50%) rotate(45deg);
+        left: 0;
+      }
+
+      &:after {
+        transform: translateY(-50%) rotate(-45deg);
+        right: 0;
+      }
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--contacts {
+      @include xs {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .logo {
+    margin-bottom: 25px;
+  }
+
+  ul {
+    margin-bottom: 25px;
+
+    @include xs {
+      margin-bottom: 0;
+      display: none;
+    }
+
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        transition: $tr;
+
+        @include md {
+          font-size: 13px;
+        }
+
+        @include xs {
+          font-size: 16px;
+        }
+
+        &:hover {
+          color: $tc;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    a {
+      display: block;
+      margin-bottom: 5px;
+      color: $tc;
+      transition: $tr;
+
+      &:hover {
+        color: $wc;
+      }
+    }
+
+    &--bottom {
+      text-align: center;
+      font-size: 12px;
+      line-height: 14px;
+      margin-top: 25px;
+
+      @include xs {
+        margin-top: 0;
+      }
+
+      a {
+        display: none;
+
+        @include xs {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .socials {
+    @include xs {
+      display: flex !important;
+      margin-top: 10px;
+      justify-content: center;
+    }
+  }
+
+  .email {
+    @include xs {
+      display: flex;
+      margin-top: 10px;
+      justify-content: center;
+    }
+  }
+}

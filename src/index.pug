@@ -1,0 +1,100 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .hero
+        .swiper.hero-js
+          .swiper-wrapper
+            mixin hero(bg,title)
+              .swiper-slide
+                .hero__slide(style=`background-image: url('assets/img/${bg}')`)
+                  .container
+                    h2.hero__title=title
+            +hero('hero1.webp','Consequat, ut malesuada suspendisse mattis')        
+            +hero('hero1.webp','Consequat, ut malesuada suspendisse mattis2')        
+            +hero('hero1.webp','Consequat, ut malesuada suspendisse mattis3')        
+          .swiper-pagination  
+      .cards
+        .container
+          .cards__wrap
+            mixin cards(img,title,status) 
+              .cards__card 
+                .cards__card-img 
+                  img(src="assets/img/"+img, alt="")
+                  if status === ''
+                  else 
+                    .cards__card-status=status  
+                a(href="#").cards__card-title=title
+            +cards('card1.webp','Доставка питания', 'Новинка')
+            +cards('card2.webp','Эко маркеты', '')
+            +cards('card3.webp','Диеотологи', 'Новинка')
+      
+      mixin textImg(text,img,modifier,additionalText)
+        .illustrated-text
+          .container
+            .illustrated-text__wrap(class="illustrated-text__wrap"+modifier)
+              .illustrated-text__text 
+                p.text=text
+              .illustrated-text__img
+                img(src="assets/img/"+img, alt="")
+            if additionalText === ''    
+            else     
+              p.text.text--tac=additionalText        
+      +textImg('Posuere quam interdum diam non arcu ultrices ultricies praesent. Est ut non malesuada ultricies donec auctor egestas ut. Vestibulum sit curabitur mi eget risus in vel. Quam ornare egestas amet enim. Semper magna facilisis lectus volutpat amet, arcu tortor turpis nisl. Nec mus aliquet sapien, nibh ut lobortis. Sodales nulla eget ut hendrerit lacus.Posuere quam interdum diam non arcu ultrices ultricies praesent. Est ut non malesuada ultricies donec auctor egestas ut. ','illustrated-text1.webp')
+      
+      .data-info 
+        .container
+          h2.title Данные
+          .data-info__wrap#counter
+            mixin dataInfo(icon,count,subtitle,desc) 
+              .data-info__item
+                .data-info__item-top
+                  .data-info__item-top-col
+                    .data-info__item-icon
+                      i(class="icon-"+icon)
+                  .data-info__item-top-col
+                    .data-info__title.count(data-count=count) 0
+                    .data-info__subtitle=subtitle
+                .data-info__desc=desc  
+            +dataInfo('users','6.569','Lorem Ipsum','Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.')
+            +dataInfo('calendar','12.546','Lorem Ipsum','Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.')
+            +dataInfo('dollar','125','Lorem Ipsum','Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.')
+      
+      +textImg('Posuere quam interdum diam non arcu ultrices ultricies praesent. Est ut non malesuada ultricies donec auctor egestas ut. Vestibulum sit curabitur mi eget risus in vel. Quam ornare egestas amet enim. Semper magna facilisis lectus volutpat amet, arcu tortor turpis nisl. Nec mus aliquet sapien, nibh ut lobortis. Sodales nulla eget ut hendrerit lacus.Posuere quam interdum diam non arcu ultrices ultricies praesent. Est ut non malesuada ultricies donec auctor egestas ut. ','illustrated-text2.webp','--reverce', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium senectus faucibus porttitor nec facilisis pretium ut nam at. Pellentesque facilisi malesuada velit fames ligula consectetur. Nunc viverra pulvinar luctus tempor, id eu varius.')
+    include includes/footer/footer
+
+
+
+  include includes/scripts 
+  script.
+    $(document).ready(function () {
+    var counted = 0;
+    $(window).scroll(function () {
+    var oTop = $('#counter').offset().top - window.innerHeight;
+    if (counted == 0 && $(window).scrollTop() > oTop) {
+    $('.count').each(function () {
+    var $this = $(this),
+    countTo = $this.attr('data-count');
+    $({
+    countNum: $this.text()
+    }).animate({
+    countNum: countTo
+    },
+    {
+    duration: 500,
+    easing: 'swing',
+    step: function () {
+    $this.text(Math.floor(this.countNum));
+    },
+    complete: function () {
+    $this.text(this.countNum);
+    }
+    });
+    });
+    counted = 1;
+    }
+    });
+    });

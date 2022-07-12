@@ -1,0 +1,351 @@
+// @import '/public/icons/fontello/css/icon.css';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font;
+
+  &.no-scroll {
+    overflow: hidden;
+    padding-right: 15px;
+
+    @include xs {
+      padding-right: 0;
+    }
+  }
+
+}
+
+// flex footer
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  .content {
+    flex: 1 0 auto;
+  }
+}
+
+// flex footer end
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+
+  @media (max-width: 1600px) {
+    max-width: 1400px;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 1170px;
+  }
+
+  @include lg {
+    max-width: 1000px;
+  }
+
+  @include md {
+    max-width: 920px;
+  }
+
+  @include sm {
+    max-width: 740px;
+  }
+
+  @include xs {
+    max-width: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.mySwiper {
+  .swiper-wrapper {
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+        background: rgba($wc, 0.6);
+
+        &.swiper-pagination-bullet-active {
+          background: $wc;
+        }
+      }
+    }
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.title {
+  color: $mc;
+  font-weight: 700;
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 35px;
+
+  @include lg {
+    font-size: 40px;
+  }
+
+  @include md {
+    font-size: 35px;
+  }
+
+  @include xs {
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  &--tal {
+    text-align: left;
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: 21.94px;
+  color: #8f8f8f;
+
+  &--tac {
+    text-align: center;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.socials {
+  @include aic;
+
+  li {
+    margin-right: 10px;
+    margin-bottom: 0 !important;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    width: 30px;
+    height: 30px;
+    background-color: $wc;
+    border-radius: 100%;
+    overflow: hidden;
+    @include aic-jcc;
+    transition: $tr;
+
+    &:hover {
+      background-color: $tc;
+
+      i {
+        color: $wc;
+      }
+    }
+
+    i {
+      color: $mc;
+      transition: $tr;
+
+      &.icon-fb {
+        font-size: 20px;
+      }
+
+      &.icon-tw {
+        font-size: 12px;
+      }
+
+      &.icon-ins {
+        font-size: 20px;
+      }
+
+      &.icon-wp {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.btn {
+  background-color: $mc;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 26px;
+  font-size: 22px;
+  @include aic-jcc;
+  color: $wc;
+  min-height: 50px;
+  transition: $tr;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-align: center;
+
+  &:hover {
+    background-color: $sc;
+  }
+
+  &--wide {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  &--tac {
+    margin: auto;
+  }
+}
+
+.contacts-list {
+
+  li {
+    margin-bottom: 24px;
+    font-size: 18px;
+    color: #8f8f8f;
+
+    @include lg {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    @include xs {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    i {
+      color: $mc !important;
+      margin-right: 30px;
+      font-size: 20px;
+
+      @include lg {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      @include xs {
+        margin-right: 10px;
+      }
+    }
+
+    a {
+      font-size: 18px;
+      transition: $tr;
+      color: #8f8f8f;
+
+      @include lg {
+        font-size: 16px;
+      }
+
+      @include xs {
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: $tc;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.hamburger {
+  width: 21px;
+  height: 15px;
+  position: relative;
+  display: none;
+
+  @include sm {
+    display: flex;
+  }
+
+  span {
+    height: 2px;
+    background-color: $bc;
+    width: 100%;
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    transition: $tr;
+
+    &:first-child,
+    &:last-child {
+      width: 14px;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:last-child {
+      float: right;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &.open {
+    span {
+      width: 100%;
+      top: 50%;
+      transform-origin: center;
+
+      &:first-child {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        left: -100%;
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.swiper {
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

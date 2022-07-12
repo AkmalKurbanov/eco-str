@@ -1,0 +1,151 @@
+.detail {
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  @include sm {
+    margin-top: 20px;
+  }
+
+  &__wrap {
+    @include aifs-jfcsb;
+    margin-bottom: 30px;
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    width: calc(50% - 20px);
+
+    @include lg {
+      width: calc(50% - 10px);
+    }
+
+    @include sm {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    border-radius: 9px;
+    overflow: hidden;
+    @include aic;
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &__name {
+    font-size: 40px;
+    font-weight: 800;
+    color: $mc;
+    margin-bottom: 23px;
+  }
+
+  #map {
+    width: 100%;
+    min-height: 210px;
+    margin-bottom: 30px;
+  }
+
+  &__reviews {
+    margin-top: 40px;
+  }
+
+  &__review {
+    box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 30px 35px;
+
+    @include xs {
+      padding: 15px;
+    }
+  }
+
+  &__review-top {
+    @include aifs-jfcsb;
+    margin-bottom: 12px;
+
+    @include xs {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__review-top-wrap {
+    @include aic;
+
+    @include xs {
+      align-items: flex-start;
+    }
+  }
+
+  &__review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    margin-right: 15px;
+
+    @include xs {
+      min-width: 34px;
+      height: 34px;
+      margin-right: 10px;
+    }
+  }
+
+  &__review-name {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24px;
+
+    @include xs {
+      font-size: 18px;
+      line-height: 21.94px;
+    }
+  }
+
+  &__review-location {
+    font-weight: 300;
+    line-height: 28px;
+
+    @include xs {
+      font-size: 14px;
+      line-height: normal;
+    }
+  }
+
+  .vue-star-rating {
+    .vue-star-rating-star {
+      width: 30px;
+      height: 25px;
+
+      @include xs {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    .vue-star-rating-rating-text {
+      display: none;
+    }
+  }
+
+  &__review-review {
+    color: #8F8F8F;
+    line-height: 22.4px;
+  }
+
+  &--specialist {
+
+
+    .detail__img {
+      margin-bottom: 15px;
+
+      @include sm {
+        display: block;
+      }
+    }
+  }
+}

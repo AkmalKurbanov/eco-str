@@ -1,0 +1,74 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .hero.hero--inside-page
+        .swiper.hero-js
+          .swiper-wrapper
+            mixin hero(bg,title,subtitle)
+              .swiper-slide
+                .hero__slide(style=`background-image: url('assets/img/${bg}')`)
+                  .container
+                    h2.hero__title=title
+                    h2.hero__subtitle=subtitle
+            +hero('hero3.webp','Six box','sixbox.kg')        
+            +hero('hero3.webp','Six box2','sixbox.kg2')        
+            +hero('hero3.webp','Six box3','sixbox.kg3')        
+          .swiper-pagination  
+      .container
+        p.text.text--tac Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium senectus faucibus porttitor nec facilisis pretium ut nam at. Pellentesque facilisi malesuada velit fames ligula consectetur. Nunc viverra pulvinar luctus tempor, id eu varius. 
+      br
+      br
+      .days-count
+        .container
+          .days-count__wrap
+            .days-count__col
+              .title Неделя = 6 дней
+            .days-count__col 
+              .title Месяц = 24 дня
+      .tariffs 
+        .container
+          .tariffs__wrap        
+            mixin tariff(title,kcal,priceDay,discountWeek,priceWeek,weekPriceDay,discountMonth,priceMonth,monthPriceDay)
+              .tariffs__item
+                .tariffs__title=title
+                .tariffs__kcal=kcal
+                  span ккал/день
+                .tariffs__price=priceDay 
+                  |  c
+                  span  день
+                .tariffs__price=priceWeek
+                  |  с
+                  .tariffs__discount=-discountWeek
+                    |%                
+                  span неделя
+                p цена за один день 
+                = weekPriceDay
+                |  сом
+                .tariffs__price=priceMonth
+                  |  с
+                  .tariffs__discount= -discountMonth
+                    |%              
+                  span месяц    
+                p цена за один день 
+                  =monthPriceDay 
+                  |  сом
+                
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+            +tariff('STANDART','1000','930','10','5000','818','12','19600','818')
+     
+          p.text.text--tac Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium senectus faucibus porttitor nec facilisis pretium ut nam at. Pellentesque facilisi malesuada velit fames ligula consectetur. Nunc viverra pulvinar luctus tempor, id eu varius.  
+    
+    include includes/footer/footer
+
+
+  include includes/scripts 

@@ -1,0 +1,142 @@
+.hero {
+  position: relative;
+  margin-bottom: 50px;
+
+  @include lg {
+    margin-bottom: 45px;
+  }
+
+  @include md {
+    margin-bottom: 40px;
+  }
+
+  @include sm {
+    margin-bottom: 35px;
+  }
+
+  @include xs {
+    margin-bottom: 22px;
+  }
+
+  &__slide {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 700px;
+    @include aic-jcc;
+
+    @include lg {
+      min-height: 500px;
+    }
+
+    @include md {
+      min-height: 400px;
+    }
+
+    @include sm {
+      min-height: 300px;
+    }
+
+    @include xs {
+      min-height: 292px;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180.05deg,
+        rgba(0, 0, 0, 0) 0.05%,
+        #000000 111.73%);
+  }
+
+  &__title {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 85px;
+    text-align: center;
+    color: $wc;
+    position: relative;
+
+    @include lg {
+      font-size: 60px;
+      line-height: normal;
+    }
+
+    @include md {
+      font-size: 50px;
+    }
+
+    @include sm {
+      font-size: 40px;
+    }
+
+    @include xs {
+      font-size: 30px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    text-align: center;
+    color: $wc;
+    position: relative;
+    margin-top: 15px;
+  }
+
+  .swiper-pagination {
+    bottom: 15px;
+
+    .swiper-pagination-bullet {
+      background: rgba($wc, 0.5);
+      opacity: 1;
+
+      &.swiper-pagination-bullet-active {
+        background: $wc;
+      }
+    }
+  }
+
+  &--inside-page {
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @include md {
+      min-height: 400px;
+    }
+
+    @include sm {
+      min-height: 300px;
+    }
+
+    @include xs {
+      min-height: 292px;
+    }
+
+    @include aic-jcc;
+
+    .hero__slide {
+      min-height: 500px;
+
+      @include md {
+        min-height: 400px;
+      }
+
+      @include sm {
+        min-height: 300px;
+      }
+
+      @include xs {
+        min-height: 292px;
+      }
+    }
+  }
+}

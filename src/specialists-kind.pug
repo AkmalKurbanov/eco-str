@@ -1,0 +1,41 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .hero.hero--inside-page
+        .swiper.hero-js
+          .swiper-wrapper
+            mixin hero(bg,title,subtitle)
+              .swiper-slide
+                .hero__slide(style=`background-image: url('assets/img/${bg}')`)
+                  .container
+                    h2.hero__title=title
+            +hero('hero6.webp','Диетологи и Нутрицологи')        
+            +hero('hero6.webp','Диетологи и Нутрицологи2')        
+            +hero('hero6.webp','Диетологи и Нутрицологи3')        
+          .swiper-pagination  
+      .container
+        p.text.text--tac Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium senectus faucibus porttitor nec facilisis pretium ut nam at. Pellentesque facilisi malesuada velit fames ligula consectetur. Nunc viverra pulvinar luctus tempor, id eu varius. 
+      br
+      br
+      .kind 
+        .container
+          .kind__wrap
+            mixin kind(img,title,subtitle)
+              a(href="#").kind__item 
+                .kind__item-img
+                  img(src="assets/img/"+img, alt="") 
+                .kind__item-info
+                  .kind__item-title=title
+                  .kind__item-subtitle=subtitle     
+            +kind('specialist1.webp','Диетологи','Nisl lacinia vitae ac mattis scelerisque etiam vitae aliquam praesent. Nunc, morbi lorem urna varius suscipit facilisis netus.')
+            +kind('specialist2.webp','Нутрицологи','Nisl lacinia vitae ac mattis scelerisque etiam vitae aliquam praesent. Nunc, morbi lorem urna varius suscipit facilisis netus.')
+
+    
+    include includes/footer/footer
+
+
+  include includes/scripts 

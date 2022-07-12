@@ -1,0 +1,98 @@
+.specialists {
+  &__wrap {
+    @include jfcsb-fww;
+
+    @include xs {
+      flex-direction: column;
+    }
+  }
+
+  &__specialist {
+    width: calc(33.33% - 16px);
+    border: 1px solid $mc;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+    transition: $tr;
+
+    @include lg {
+      width: calc(33.33% - 8px);
+      padding: 20px 15px;
+    }
+
+    @include md {
+      width: calc(50% - 8px);
+    }
+
+    @include xs {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 14px 24px rgba($mc, 0.3);
+    }
+  }
+
+  &__specialist-img {
+    max-width: 155px;
+    width: 100%;
+    @include aic;
+    margin: auto;
+    margin-bottom: 18px;
+    transition: $tr;
+    border-radius: 100%;
+    overflow: hidden;
+
+    @include lg {
+      max-width: 140px;
+    }
+
+    @include md {
+      max-width: 120px;
+    }
+
+    @include sm {
+      max-width: 100px;
+    }
+
+    @include xs {
+      max-width: 80px;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 14px 24px rgba($tc, 0.3);
+    }
+  }
+
+  &__specialist-name {
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    color: $bc;
+    margin-bottom: 20px;
+    transition: $tr;
+    text-align: center;
+
+    @include lg {
+      font-size: 25px;
+    }
+
+    @include md {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: $sc;
+    }
+  }
+
+  .contacts-list {
+    i {
+      margin-right: 20px;
+    }
+  }
+}

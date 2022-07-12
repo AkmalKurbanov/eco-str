@@ -1,0 +1,61 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .hero.hero--inside-page
+        .swiper.hero-js
+          .swiper-wrapper
+            mixin hero(bg,title,subtitle)
+              .swiper-slide
+                .hero__slide(style=`background-image: url('assets/img/${bg}')`)
+                  .container
+                    h2.hero__title=title
+            +hero('hero7.webp','Диетологи')        
+            +hero('hero7.webp','Диетологи2')        
+            +hero('hero7.webp','Диетологи3')        
+          .swiper-pagination  
+      
+      .specialists
+          .container
+            .specialists__wrap
+              mixin specialist(img,name)
+                .specialists__specialist
+                  .specialists__specialist-link
+                    a(href="#").specialists__specialist-img
+                      img(src="assets/img/"+img, alt="")
+                    a(href="#").specialists__specialist-name=name
+                    .specialists__specialist-rating
+                    ul.contacts-list
+                      li
+                        i.icon-user
+                        span +56 clients
+                      li
+                        i.icon-phone
+                        a(href="tel:+996123456789") +996 123 456 789
+
+                      li
+                        i.icon-envelope
+                        a(href="mailto:theresewebb@gmail.com") theresewebb@gmail.com
+                      li
+                        i.icon-clock
+                        span 10 AM - 7 PM
+                      li
+                        i.icon-chrome
+                        a(href="http://www.diet-doctor.kg/") http://www.diet-doctor.kg/
+                      li
+                        i.icon-marker
+                        span 4140 Parker Rd. Allentown
+              +specialist('specialist1.webp','Jane Cooper')
+              +specialist('specialist2.webp','Esther Howard')
+              +specialist('specialist3.webp','Kathryn Murphy')
+              +specialist('specialist4.webp','Theresa Webb')
+              +specialist('specialist5.webp','Leslie Alexander')
+              +specialist('specialist6.webp','Ronald Richards')
+    
+    include includes/footer/footer
+
+
+  include includes/scripts 

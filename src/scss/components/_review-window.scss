@@ -1,0 +1,120 @@
+.review {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: $tr;
+  pointer-events: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+
+  padding: 15px;
+  @include aic-jcc;
+  z-index: 9;
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &.open {
+    opacity: 1;
+    pointer-events: inherit;
+  }
+
+  &.close {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .title {
+    @include xs {
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+
+  .review__window {
+    position: relative;
+    text-align: center;
+    @include aic-jcc;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    padding: 60px 20px;
+    background-color: $wc;
+    border-radius: 10px;
+    border: 1px solid $mc;
+
+    @include xs {
+      padding: 30px 10px;
+    }
+
+    .vue-star-rating {
+      display: block;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .btn {
+      display: block;
+      margin: auto;
+    }
+
+    .vue-star-rating-rating-text {
+      display: none;
+    }
+
+    .vue-star-rating-star {
+      width: 27px;
+    }
+
+    p {
+      margin: 10px 0;
+      span {
+        font-weight: 800;
+      }
+    }
+
+    textarea {
+      border-radius: 10px;
+      border: 1px solid $mc;
+      resize: none;
+      min-height: 230px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      padding: 10px;
+      font-size: 16px;
+
+      @include xs {
+        min-height: 120px;
+        margin-bottom: 20px;
+      }
+
+      &::placeholder {
+        font-size: 14px;
+        color: rgba($bc, 0.3);
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+  }
+}

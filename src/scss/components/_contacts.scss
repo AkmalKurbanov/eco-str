@@ -1,0 +1,110 @@
+.contacts {
+  margin-bottom: 50px;
+
+  @include xs {
+    margin-bottom: 0;
+  }
+
+  .title {
+    margin-bottom: 28px;
+    font-size: 38px;
+  }
+
+  &__item {
+    font-size: 24px;
+    line-height: 38.4px;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    * {
+      color: #231f20;
+    }
+
+    a {
+      transition: $tr;
+
+      &:hover {
+        color: $tc;
+      }
+    }
+
+    i {
+      margin-right: 20px;
+    }
+  }
+
+  &__wrap {
+    @include aic;
+
+    @include md {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__col {
+    width: 50%;
+
+    @include md {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  }
+
+  .form {
+    background-color: rgba($tc, 0.1);
+    padding: 27px 30px;
+    border-radius: 28px;
+
+    @include xs {
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    &__input {
+      margin-bottom: 10px;
+
+      input,
+      textarea {
+        border: 1px solid #62a111;
+        border-radius: 10px;
+        overflow: hidden;
+        min-height: 50px;
+        width: 100%;
+        padding: 15px 25px;
+
+        &::placeholder {
+          color: #757c7f;
+          font-size: 14px;
+        }
+      }
+
+      textarea {
+        padding-bottom: 0;
+      }
+    }
+
+    &__wrap {
+      @include aic-jfcsb;
+
+      @include xs {
+        flex-direction: column;
+      }
+
+      .form__input {
+        width: calc(50% - 9px);
+
+        @include xs {
+          width: 100%;
+        }
+      }
+    }
+
+    .btn {
+      margin-top: 17px;
+    }
+  }
+}

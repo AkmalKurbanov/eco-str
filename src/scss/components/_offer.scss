@@ -1,0 +1,43 @@
+.offer {
+  margin-top: 40px;
+  margin-bottom: 50px;
+
+  .title {
+    @include xs {
+      font-size: 24px;
+      line-height: 29.26px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @include xs {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  p,
+  ul {
+    margin-bottom: 15px;
+  }
+
+  ul {
+    li {
+      font-size: 18px;
+      color: #8f8f8f;
+      line-height: 21.94px;
+      position: relative;
+      padding-left: 25px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 2px;
+        border-radius: 100%;
+        background: #8f8f8f;
+        top: 10px;
+        left: 10px;
+      }
+    }
+  }
+}

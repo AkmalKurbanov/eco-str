@@ -1,0 +1,170 @@
+.tariffs {
+  margin-bottom: 50px;
+
+  &__wrap {
+    @include aifs-jfcsb;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    border: 1px solid $mc;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 30px;
+    width: calc(25% - 16px);
+    margin-bottom: 60px;
+
+    @include lg {
+      margin-bottom: 20px;
+      padding: 20px;
+      width: calc(25% - 7px);
+    }
+
+    @include md {
+      width: calc(50% - 7px);
+    }
+
+    @include xs {
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: rgba($mc, 0.65);
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include lg {
+        font-size: 14px;
+      }
+
+      @include xs {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $sc;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 12px;
+
+    @include lg {
+      font-size: 16px;
+      line-height: normal;
+      margin-bottom: 9px;
+    }
+
+    @include xs {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__kcal {
+    font-weight: 700;
+    font-size: 32px;
+    color: #757c7f;
+    @include aic-jcc;
+    margin-bottom: 10px;
+
+    @include lg {
+      font-size: 20px;
+      line-height: normal;
+      margin-bottom: 7px;
+    }
+
+    @include xs {
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 12px;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      margin-left: 5px;
+
+      @include lg {
+        font-size: 12px;
+        line-height: normal;
+      }
+
+      @include xs {
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+  }
+
+  &__price {
+    background-color: $wc;
+    box-shadow: -1px 4px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 18px;
+    color: $mc;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    min-height: 42px;
+    margin-bottom: 20px;
+    @include aic-jcc;
+
+    @include lg {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    @include xs {
+      font-size: 18px;
+    }
+
+    span {
+      font-weight: 400;
+      color: rgba($mc, 0.5);
+      position: relative;
+      margin-left: 10px;
+      padding-left: 10px;
+
+      @include lg {
+        margin-left: 8px;
+        padding-left: 8px;
+        font-size: 13px;
+      }
+
+      &:before {
+        position: absolute;
+        content: "/";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    background-color: $sc;
+    color: $wc;
+    font-weight: 600;
+    font-size: 10px;
+    @include aic-jcc;
+    max-width: 38px;
+    width: 100%;
+    min-height: 22px;
+    top: 50%;
+    right: -18px;
+    transform: translateY(-50%);
+    border-radius: 11px;
+  }
+}
